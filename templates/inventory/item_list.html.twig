@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h2>Items</h2>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }} {{ item.user ? '(' ~ item.user.name ~ ')' : '' }}</li>
+        {% endfor %}
+    </ul>
+
+    {% include 'inventory/item_form.html.twig' %}
+{% endblock body %}

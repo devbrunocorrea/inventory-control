@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<form action="{{ path('item_movement') }}" method="POST">
+  <input type="hidden" name="token" value="{{ csrf_token('item-movement') }}"/>
+  <div class="form-group">
+    <label for="item_select">Item</label>
+    <select class="form-control" id="item_select" name="item_select">
+    {% for item in items %}
+      <option value="{{ item.id }}">{{ item.name }}</li>
+    {% endfor %}
+  </select>
+  </div>
+
+  <div class="form-group">
+    <label for="user_select">Usuário</label>
+    <select class="form-control" id="user_select" name="user_select">
+    <option value="">Devolver</option>
+    {% for user in users %}
+        <option value="{{ user.id }}">{{ user.name }}</li>
+    {% endfor %}
+  </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Movimentar Item</button>
+</form>
+{% endblock body %}

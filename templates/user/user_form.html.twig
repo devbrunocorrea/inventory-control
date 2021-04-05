@@ -1,0 +1,9 @@
+<form action="{{ path('user_new') }}" method="POST">
+  <input type="hidden" name="token" value="{{ csrf_token('create-user') }}"/>
+  <div class="mb-3">
+    <label for="user_name" class="form-label">Nome</label>
+    <input type="text" class="form-control" name="user_name" id="user_name" aria-describedby="userNameHelp">
+    <div id="userNameHelp" class="form-text">Digite nome do usuário</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Criar Usuário</button>
+</form>

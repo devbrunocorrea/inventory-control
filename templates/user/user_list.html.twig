@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h2>Usuários</h2>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name }} (Items: {{ user.items|length }})</li>
+        {% endfor %}
+    </ul>
+    
+
+    {% include 'user/user_form.html.twig' %}
+{% endblock body %}
+
